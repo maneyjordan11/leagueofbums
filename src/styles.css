@@ -1,0 +1,61 @@
+@import "tailwindcss" source("../");
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap');
+
+@theme {
+  --font-display: 'Anton', 'Arial Narrow', sans-serif;
+  --font-body: 'IBM Plex Sans', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+
+  --color-field: #14110d;
+  --color-field-raised: #1d1811;
+  --color-field-line: #332a1c;
+  --color-parchment: #f1e6d2;
+  --color-parchment-dim: #c9bc9f;
+  --color-mustard: #e3a530;
+  --color-mustard-bright: #f4c454;
+  --color-rust: #c1502e;
+  --color-rust-bright: #e0663e;
+  --color-turf: #4c6b46;
+}
+
+html {
+  background-color: var(--color-field);
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background-color: var(--color-field);
+  color: var(--color-parchment);
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(circle at 15% 0%, rgba(227, 165, 48, 0.10), transparent 45%),
+    radial-gradient(circle at 100% 30%, rgba(193, 80, 46, 0.12), transparent 50%);
+  background-attachment: fixed;
+}
+
+code {
+  font-family: var(--font-mono);
+}
+
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: 0.01em;
+}
+
+.grain-overlay {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+::selection {
+  background: var(--color-mustard);
+  color: var(--color-field);
+}
